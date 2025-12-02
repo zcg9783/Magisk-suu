@@ -222,12 +222,12 @@ done
 
 if [ -f kernel ]; then
   PATCHEDKERNEL=false
-  # Remove Samsung RKP
- # patch vivo do_mount_check by wuxianlin
+  # patch vivo do_mount_check by wuxianlin
   # /system -> /syswxl
   # python3 -c "print(hex(int.from_bytes(b'/system', 'big')^int('bdbcbbbab9b8b7', 16)))"
-  ./magiskboot hexpatch kernel 0092CFC2C9CDDDDA00 0092CFC2C9CEC0DB00 && PATCHEDKERNEL=true 
+  ./magiskboot hexpatch kernel 0092CFC2C9CDDDDA00 0092CFC2C9CEC0DB00 && PATCHEDKERNEL=true
   
+  # Remove Samsung RKP
   ./magiskboot hexpatch kernel \
   49010054011440B93FA00F71E9000054010840B93FA00F7189000054001840B91FA00F7188010054 \
   A1020054011440B93FA00F7140020054010840B93FA00F71E0010054001840B91FA00F7181010054 \

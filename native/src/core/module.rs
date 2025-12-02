@@ -463,7 +463,7 @@ fn inject_magisk_bins(system: &mut FsNode, is_emulator: bool) {
         );
 
         // Inject applet symlinks
-        children.insert("su".to_string(), FsNode::MagiskLink);
+        children.insert("suu".to_string(), FsNode::MagiskLink);
         children.insert("resetprop".to_string(), FsNode::MagiskLink);
         children.insert("supolicy".to_string(), FsNode::MagiskLink);
     }
@@ -498,7 +498,7 @@ fn inject_magisk_bins(system: &mut FsNode, is_emulator: bool) {
         }
 
         // Override existing su first
-        let su_path = Utf8CString::from(format!("{orig_item}/su"));
+        let su_path = Utf8CString::from(format!("{orig_item}/suu"));
         if su_path.exists() {
             let item = strip_system_prefix(orig_item);
             candidates.push((item, 0));
